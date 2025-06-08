@@ -1,13 +1,12 @@
-# Security Policy
+Xavfsizlik Siyosati
+Qo‘llab-quvvatlanadigan versiyalar
+Versiya	Qo‘llab-quvvatlanadi
 
-## Supported Versions
-
-| Version    | Supported |
+| Versiya    | Qo‘llab-quvvatlanadi |
 | :--------- | :-------: |
 | >= `7.0.0` |     ✓     |
 | <= `6.0.0` |     ✗     |
 
-## Reporting a Vulnerability
-
-If you find a vulnerability, please report it to `cotes.chung@gmail.com`.
-We will try our best to respond within a week. Thank you for your time!
+Zaiflik haqida xabar berish
+Agar siz tizimda xavfsizlik zaifligini topsangiz, iltimos, bu haqda quyidagi manzilga xabar bering: `cotes.chung@gmail.com`.
+Biz bir hafta ichida javob berishga harakat qilamiz. Vaqtingizni ajratganingiz uchun rahmat!
