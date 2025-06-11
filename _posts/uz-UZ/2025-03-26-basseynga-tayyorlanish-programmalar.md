@@ -127,5 +127,3 @@ _OvozliTarjima Funksiyasi_
 ### **Xulosa**
 
 Ushbu maqolada, sizga **Yandex** ning yangi imkoniyatlari, **ChatGPT** ni Yandex orqali o'rnatish, **Git** yordamida versiyalarni boshqarish, **Crow Translate** va **OCR** funksiyasidan foydalanish, shuningdek, **YouTube** videolarini tarjima qilish, **Punto Switcher** dasturidan foydalanish haqida ko'rsatmalar berildi. **Yandex** ning yangi versiyasida nafaqat tilni avtomatik o'zgartirish, balki **ovozli tarjima** kabi qiziqarli funksiyalar ham mavjud bo'lib, ular sizning ish jarayoningizni sezilarli darajada samarali qiladi.
-
-- [`Tugallangan С piscine` maqolasiga o'tish](../tugallangan-c-piscine/){: target="_blank"}
