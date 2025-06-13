@@ -226,7 +226,7 @@ image:
 ---
 ```
 
-Shuni yodda tutingki, [`media_subpath`](#url-prefix) oldindan ko'rish rasmiga ham o'tkazilishi mumkin, ya'ni u o'rnatilganda, `path` atributi faqat rasm fayl nomini talab qiladi.
+Shuni yodda tutingki, [`media_subpath`]\(\#url-prefix\) oldindan ko'rish rasmiga ham o'tkazilishi mumkin, ya'ni u o'rnatilganda, `path` atributi faqat rasm fayl nomini talab qiladi.
 
 Oddiy foydalanish uchun, siz `image` ni faqat yo'lni belgilash uchun ishlatishingiz mumkin.
 
