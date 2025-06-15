@@ -7,7 +7,7 @@ categories: [21-IT Maktab - School 21, Basseyn - C Piscine]
 tags: [Basseyn - C Piscine]
 pin: true
 image:
-  path: /school-21.png
+  path: /conway.gif
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: 21-IT Maktab - School 21.
 media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
