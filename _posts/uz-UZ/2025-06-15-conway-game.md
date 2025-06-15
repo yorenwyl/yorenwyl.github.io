@@ -17,7 +17,7 @@ media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
 
 ### Conway O'yini tarixi
 
-Conwayning "Hayot O'yini" (Conway's Game of Life) — bu juda oddiy va eng ko'p ommalashgan hujayrali avtomatlardan biridir. 1970-yilda ingliz matematikasi Jon Xorton Konvay tomonidan yaratilgan bu o'yin, ayniqsa, uning o'ziga xos qoidalari bilan diqqatga sazovor. O'yin maqsadi – tasodifiy tarzda boshlang'ich holat berilgan maydon bo'ylab hayot va o'limni simulyatsiya qilishdir. Bu o'yinda eng muhim jihat shundaki, uning rivojlanishi har qanday tashqi aralashuvsiz faqat dastlabki holatga bog'liq.
+Conwayning "Hayot O'yini" (Conway's Game of Life) — bu juda oddiy va eng ko'p ommalashgan o'yinlardan biridir. 1970-yilda ingliz matematikasi Jon Xorton Konvay tomonidan yaratilgan bu o'yin, ayniqsa, uning o'ziga xos qoidalari bilan diqqatga sazovor. O'yin maqsadi – tasodifiy tarzda boshlang'ich holat berilgan maydon bo'ylab hayot va o'limni simulyatsiya qilishdir. Bu o'yinda eng muhim jihat shundaki, uning rivojlanishi har qanday tashqi aralashuvsiz faqat dastlabki holatga bog'liq.
 
 ### O'yin qoidalari
 
@@ -31,11 +31,11 @@ O'yinning rivojlanishi to'liq avtomatik bo'lib, bu o'yinda hech qanday foydalanu
 
 ### Kodni tushunish
 
-SKeltirilgan kod C dasturlash tilida yozilgan va **ncurses**, **stdio** kutubxonalaridan foydalanadi, bu esa terminalda o'yinning vizualizatsiyasini amalga oshirishga yordam beradi. Quyida kodning asosiy qismlarini tahlil qilamiz.
+Keltirilgan kod C dasturlash tilida yozilgan va **ncurses**, **stdio** kutubxonalaridan foydalanadi, bu esa terminalda o'yinning vizualizatsiyasini amalga oshirishga yordam beradi. Quyida kodning asosiy qismlarini tahlil qilamiz.
 
 ```
 /*
- *Copyrights 2025 yorenwyl, ismaelja (Leader), onionscy Samarkand
+ *Copyrights 2025 yorenwyl, ismaelja (Leader), onionscy, 21 - school in Samarkand
  */
 
 // ncurses kutubxonasi: terminal interfeysini boshqarish uchun kerak
@@ -186,8 +186,6 @@ int main(int argc, char *argv[]) {
 
 `load_from_file` funktsiyasi tashqi fayldan o'yin boshlang'ich holatini yuklab olish imkonini beradi. Agar fayl ochilmasa, "glider" shakli o'rnatiladi.
 
-Albatta! Quyida sizning **Conway’s Game of Life** C dasturingizni qanday **kompilyatsiya qilish**, **ishga tushurish** va qanday **parametrlar bilan ishlash** haqida to‘liq yo‘riqnoma yozdim.
-
 ---
 
 ## 🚀 Dastur Ishga Tushirish Yo‘riqnomasi
@@ -209,11 +207,11 @@ C faylni kompilyatsiya qilish uchun terminalda quyidagi buyruqni yozing (misol u
 gcc game_of_life.c -o game_of_life -lncurses
 ```
 
-> Bu yerda:
->
-> * `gcc` – GNU Compiler.
-> * `-o game_of_life` – chiqadigan fayl nomi.
-> * `-lncurses` – `ncurses` kutubxonasini ulaydi.
+Bu yerda:
+
+* `gcc` – GNU Compiler.
+* `-o game_of_life` – chiqadigan fayl nomi.
+* `-lncurses` – `ncurses` kutubxonasini ulaydi.
 
 ---
 
@@ -235,14 +233,14 @@ Agar siz faylga yozilgan boshlang‘ich holatni yuklamoqchi bo‘lsangiz:
 ./game_of_life patterns/glider.txt
 ```
 
-> `patterns/glider.txt` – bu faylda har bir qator `O` va bo‘sh joylardan iborat bo‘lishi kerak.
-> Masalan:
+`patterns/glider.txt` – bu faylda har bir qator `O` va bo‘sh joylardan iborat bo‘lishi kerak.
+Masalan:
 >
-> ```
->  O 
->   O
-> OOO
-> ```
+```
+ O 
+  O
+OOO
+```
 
 ---
 
