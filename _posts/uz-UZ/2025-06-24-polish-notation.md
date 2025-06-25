@@ -15,38 +15,470 @@ media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
 
 ---
 
-## **Basseyn(С piscine)ga tayyorlanish uchun zarur manbalar** 
+## **Polish notation** 
 
-> Siz dastlabki testdan o'tib zarur xujjatlarni maktabga topshirgach sizga basseynga qadar bo'lgan vaqtda tayyorlanishingiz uchun kitoblar ro'yxati junatiladi.
+> Ushbu maqolada "Polish notation" bilan ishlash haqida gap ketadi.
 {: .prompt-tip }
 
-[🔄 Sahifani yangilash](javascript:location.reload()){:.shadow}
+---
 
-# Reverse Polish Notation (RPN) Kalkulyatori: Matematik Ifodalarni Qayta Ishlash Loyihasi
+## 🧮 Reverse Polish Notation (RPN) Kalkulyatori Tarixi
 
-Ushbu maqolada men yaratgan Reverse Polish Notation (RPN) kalkulyatori loyihasi haqida so'zlab o'taman. Loyiha C dasturlash tilida yozilgan bo'lib, matematik ifodalarni qayta ishlash va ularni grafik ko'rinishda tasvirlash imkonini beradi.
+### 📌 RPN nima?
 
-## Loyiha Tarkibi
+**Reverse Polish Notation (RPN)** – bu matematik ifodalarni yozish usuli bo‘lib, unda **amal operatorlari operandlardan keyin** yoziladi. Masalan:
 
-Loyiha quyidagi asosiy komponentlardan iborat:
+* An’anaviy: `3 + 4`
+* RPN: `3 4 +`
 
-1. **Matematik ifodalarni tahlil qilish (parsing)**
-2. **Infix notatsiyadan RPN ga o'tkazish**
-3. **RPN ifodasini baholash**
-4. **Natijani grafik ko'rinishda tasvirlash**
+Bu usulda qavslar kerak emas – amallar bajarilish tartibi operandlar va operatorlar joylashuviga qarab aniqlanadi.
+
+---
+
+### 🧠 Tarixiy kelib chiqishi
+
+#### 🇵🇱 Jan Łukasiewicz (1920-yillar)
+
+RPN **polshalik mantiqshunos** **Jan Łukasiewicz** tomonidan ishlab chiqilgan **Polish Notation (PN)** g‘oyasidan kelib chiqqan. U algebraik ifodalarni kompyuterlar uchun sodda formatda ifodalash yo‘llarini izlagan.
+
+* **PN (Polish Notation)**: operator **oldinda** (`+ 3 4`)
+* **RPN (Reverse Polish Notation)**: operator **orqada** (`3 4 +`)
+
+---
+
+### 🖥️ Kompyuter va RPN
+
+#### 1950–60-yillar: Ilk RPN modellar
+
+RPN ilk bor kompyuter tillarida **stack-based** (stack asosli) hisoblashlarni soddalashtirish uchun qo‘llanilgan. Ayniqsa, **postfix** format kompyuterda ifodalarni **qavsiz** tahlil qilishni osonlashtirgan.
+
+#### 1963: **Burroughs B5000** protsessori
+
+Burroughs kompaniyasi ishlab chiqqan B5000 kompyuteri RPN printsipiga asoslangan **stack-based arxitekturani** birinchi marta apparat darajasida qo‘llagan.
+
+---
+
+### 📟 RPN kalkulyatorlarining paydo bo‘lishi
+
+#### 🔬 HP (Hewlett-Packard) – RPN ni mashhur qilgan kompaniya
+
+* **1972**: HP kompaniyasi **HP-35** nomli ilk ilmiy kalkulyatorni taqdim etdi – bu **dunyoning birinchi RPN kalkulyatori** edi.
+* HP kalkulyatorlari stack asosida ishlaydi: har bir raqam stack’ga qo‘shiladi, operator esa stack’dagi qiymatlarni ishlatadi.
+
+#### HP-11C, HP-15C, HP-48 va boshqalar
+
+80–90-yillarda ishlab chiqarilgan ko‘plab professional kalkulyatorlar (muhandislar, fiziklar, matematiklar uchun) RPN formatidan foydalangan.
+
+---
+
+### ✅ RPN afzalliklari
+
+* Qavslar kerak emas
+* Amallar bajarilish tartibi aniqligi
+* Stack bilan to‘g‘ridan-to‘g‘ri ishlash imkoniyati
+* Hisoblash jarayoni sodda va izchil
+
+---
+
+### ❌ Kamchiliklari
+
+* Yangi foydalanuvchilar uchun g‘ayritabiiy ko‘rinadi
+* Mashq talab qiladi
+* An’anaviy yozuvga o‘xshamaydi
+
+---
+
+### 📱 Bugungi holat
+
+Hozirda ko‘pchilik kalkulyatorlar klassik algebraik (infix) sintaksisdan foydalansa ham, **RPN kalkulyatorlar** hanuzgacha **professional foydalanuvchilar orasida mashhur**. HP, SwissMicros va ba’zi mobil ilovalar hali ham RPN ni qo‘llab-quvvatlaydi.
+
+---
+
+## 🏁 Xulosa
+
+Reverse Polish Notation — bu matematik ifodalarni kompyuterlar uchun qulay va samarali tarzda ifodalash usuli bo‘lib, uning ildizlari XX asr boshidagi mantiqiy tadqiqotlarga borib taqaladi. HP kalkulyatorlari orqali mashhurlikka erishgan bu metod bugungi kunda ham texnik va ilmiy sohalarda o‘z o‘rnini saqlab qolgan.
+
+---
+
+> Men yasagan "Polish notation" bilan ishlash zarur bo'lgan gurux ishi kodini C dasturlash tilida ushbu ma'qolada sizga taqdim etaman.
+{: .prompt-tip }
 
 ### Asosiy Fayllar
+# Matematik Ifodalarni Tahlil Qilish va Grafik Ko'rsatish Dasturi
 
-```bash
-.
-├── evaluate_rpn.[c/h]      - RPN ifodasini baholash
-├── infix_to_rpn.[c/h]      - Infix dan RPN ga o'tkazish
-├── parse_expression.[c/h]  - Ifodalarni tahlil qilish
-├── rendering_image.[c/h]   - Grafik tasvir
-├── stack.[c/h]             - Stack amallari
-├── token.h                 - Token turlari
-└── graph.c                 - Asosiy dastur
+Ushbu maqolada men yozgan C dasturi haqida batafsil ma'lumot beraman. Dastur matematik ifodalarni qabul qilib, ularni tahlil qiladi, Reverse Polish Notation (RPN) shakliga o'tkazadi va natijani grafik ko'rinishda konsolga chiqaradi.
+
+## Dastur Tuzilishi
+
+Dastur quyidagi modullardan iborat:
+
+1. **parse_expression** - matn shaklidagi matematik ifodani tokenlarga ajratadi
+2. **infix_to_rpn** - infix notatsiyadagi ifodani RPN (postfix) ga o'tkazadi
+3. **evaluate_rpn** - RPN ifodasini hisoblaydi
+4. **rendering_image** - hisoblash natijalarini grafik shaklda ko'rsatadi
+5. **stack** - stack ma'lumotlar strukturasi va uning operatsiyalari
+6. **token** - token turlari va strukturasi
+
+## Asosiy Funksiyalar
+
+### 1. Ifodani Tahlil Qilish (parse_expression.c)
+
+Bu modul foydalanuvchi kiritgan matnli ifodani quyidagi token turlariga ajratadi:
+
+- Sonlar (TOKEN_NUMBER)
+- Operatorlar (TOKEN_OPERATOR: +, -, *, /)
+- Funktsiyalar (TOKEN_FUNCTION: sin, cos, tan, ctg, sqrt, ln)
+- O'zgaruvchilar (TOKEN_VARIABLE: x)
+- Qavslar (TOKEN_LEFT_PAREN, TOKEN_RIGHT_PAREN)
+
+```c
+void parse_expression(const char *expression, Token **tokens, int *num_tokens) {
+    *num_tokens = 0;
+    *tokens = NULL;
+    int i = 0;
+    while (expression[i] != '\0') {
+        if (expression[i] == ' ') {
+            i++;
+            continue;
+        }
+        if (my_isdigit(expression[i])) {
+            processing_numbers(expression, tokens, num_tokens, &i);
+        } else if (expression[i] == '-' && ... ) {
+            unary_minus(tokens, num_tokens, &i);
+        } else if (is_operator(expression[i])) {
+            processing_operators(expression, tokens, num_tokens, &i);
+        }
+        // ... boshqa token turlari
+    }
+}
 ```
+
+### 2. Infixdan RPN ga O'tkazish (infix_to_rpn.c)
+
+Bu modul infix notatsiyadagi ifodani (masalan, "3 + 4 * 2") postfix (RPN) shakliga ("3 4 2 * +") o'tkazadi. Bunda Shunting-yard algoritmi qo'llaniladi.
+
+```c
+void infix_to_rpn(const Token *infix_tokens, int num_infix_tokens, Token **rpn_tokens, int *num_rpn_tokens) {
+    *num_rpn_tokens = 0;
+    *rpn_tokens = NULL;
+    Stack operator_stack;
+    stack_init(&operator_stack, num_infix_tokens);
+
+    for (int i = 0; i < num_infix_tokens; i++) {
+        const Token *current_token = &infix_tokens[i];
+        if (current_token->type == TOKEN_NUMBER || current_token->type == TOKEN_VARIABLE) {
+            number_or_variable(rpn_tokens, num_rpn_tokens, current_token);
+        }
+        // ... boshqa token turlarini qayta ishlash
+    }
+    // ... stackda qolgan operatorlarni chiqarish
+}
+```
+
+### 3. RPN Ifodasini Hisoblash (evaluate_rpn.c)
+
+Bu modul RPN shaklidagi ifodani hisoblab, natijani qaytaradi. Bunda stackdan foydalaniladi.
+
+```c
+double evaluate_rpn(const Token *rpn_tokens, int num_rpn_tokens, double x) {
+    Stack operand_stack;
+    stack_init(&operand_stack, num_rpn_tokens);
+
+    for (int i = 0; i < num_rpn_tokens; i++) {
+        const Token *current_token = &rpn_tokens[i];
+        if (current_token->type == TOKEN_NUMBER) {
+            stack_push(&operand_stack, current_token->value);
+        } else if (current_token->type == TOKEN_VARIABLE) {
+            function_variable(current_token, &operand_stack, x);
+        }
+        // ... boshqa token turlarini qayta ishlash
+    }
+    // ... natijani olish va stackni tozalash
+}
+```
+
+### 4. Grafik Tasvirni Yaratish (rendering_image.c)
+
+Bu modul hisoblash natijalarini 25x80 o'lchamdagi matritsaga joylashtirib, konsolga chiqaradi.
+
+```c
+void create_graphic(int matrix[HEIGHT][WIDTH], const Token *rpn_tokens, int num_rpn_tokens) {
+    for (int i = 0; i < WIDTH; i++) {
+        double x = (i * 4.0 * M_PI) / (WIDTH - 1);
+        double res = evaluate_rpn_function(rpn_tokens, num_rpn_tokens, x);
+        int y = round((res + 1) * (HEIGHT - 1) / 2);
+        if (y >= 0 && y < HEIGHT) {
+            matrix[y][i] = sym;
+        }
+    }
+}
+```
+
+## Stack Implementatsiyasi (stack.c)
+
+Dasturda stack ma'lumotlar strukturasi tokenlarni saqlash va RPN ga o'tkazish jarayonida qo'llaniladi.
+
+```c
+void stack_init(Stack *stack, int size) {
+    stack->data = (char **)malloc(sizeof(char *) * size);
+    stack->size = size;
+    stack->top = -1;
+}
+
+void stack_push(Stack *stack, const char *value) {
+    if (stack->top < stack->size - 1) {
+        stack->top++;
+        stack->data[stack->top] = (char *)malloc(sizeof(char) * (strlen(value) + 1));
+        strcpy(stack->data[stack->top], value);
+    }
+}
+```
+
+## Token Turlari (token.h)
+
+Dasturdagi barcha token turlari quyidagi enum orqali belgilanadi:
+
+```c
+typedef enum {
+    TOKEN_NUMBER,      // sonlar
+    TOKEN_OPERATOR,    // +, -, *, /
+    TOKEN_FUNCTION,    // sin, cos, tan, ctg, sqrt, ln
+    TOKEN_VARIABLE,    // x
+    TOKEN_LEFT_PAREN,  // (
+    TOKEN_RIGHT_PAREN  // )
+} TokenType;
+```
+
+## Dasturdan Foydalanish
+
+Quyidagi `Makefile` — C dasturlash loyihasini avtomatik tarzda tuzish (build), tozalash (clean), formatlash (clang-format), tahlil qilish (cppcheck), va ishga tushirish (run) imkonini beruvchi avtomatlashtirilgan skript hisoblanadi. Quyida har bir qator va bo‘limni sodda qilib tushuntirib beraman:
+
+---
+
+## 🔧 Asosiy sozlamalar:
+
+```make
+CC = gcc
+CFLAGS = -c -Wall -Werror -Wextra
+```
+
+* `CC` – kompilyator nomi (`gcc`).
+* `CFLAGS` – kompilyatsiya bayroqlari:
+
+  * `-c` → faqat obyekt (.o) fayl yaratadi.
+  * `-Wall` → barcha ogohlantirishlarni ko‘rsatadi.
+  * `-Werror` → ogohlantirishlarni xatoga aylantiradi.
+  * `-Wextra` → qo‘shimcha ogohlantirishlar.
+
+---
+
+## 📄 Manba fayllar:
+
+```make
+SRC1 = graph.c
+SRC2 = evaluate_rpn.c
+...
+SRC6 = stack.c
+```
+
+* Har bir `.c` fayl — alohida modulni ifodalaydi.
+
+---
+
+## 🔁 Obyekt fayl nomlari:
+
+```make
+OBJ1=$(patsubst %.c,%,$(SRC1))
+...
+OBJ6=$(patsubst %.c,%,$(SRC6))
+```
+
+* Har bir `.c` fayldan nomini olib `.o` faylga mos nomlar hosil qiladi (`graph.c → graph_q.o` bo‘ladi keyinchalik).
+
+---
+
+## 📁 Kataloglar:
+
+```make
+BUILD = ../build
+SRC_DIR = .
+Q = $(BUILD)/graph
+```
+
+* `BUILD` → tayyor dastur saqlanadigan papka.
+* `SRC_DIR` → manba kodlar joylashgan papka.
+* `Q` → yakuniy bajariluvchi fayl (`../build/graph`).
+
+---
+
+## 🧱 `all` – Loyihani tuzish:
+
+```make
+all: ..._q.o ...
+    @mkdir -p $(BUILD)
+    $(CC) $^ -o $(Q) -lm
+```
+
+* Barcha `.o` fayllarni kompilyatsiya qiladi.
+* `mkdir -p` → `build` papkasini yaratadi (agar mavjud bo‘lmasa).
+* `$^` → barcha `.o` fayllar ro‘yxati.
+* `-lm` → `math.h` funksiyalari uchun matematik kutubxona.
+
+---
+
+## ⚙️ Har bir `.o` faylni kompilyatsiya qilish:
+
+```make
+$(OBJ1)_q.o: $(SRC1)
+    $(CC) $(CFLAGS) $^ -o $@
+```
+
+* `graph.c` → `graph_q.o` ni yaratadi.
+* `$^` → kerakli `.c` fayl.
+* `$@` → chiqadigan obyekt fayl nomi.
+
+---
+
+## 🧹 Tozalash buyruqlari:
+
+```make
+clean:
+    rm -f *.o
+    [ -d $(BUILD) ] && find $(BUILD) -type f -not -name '.gitkeep' -delete || true
+```
+
+* `clean` → `.o` fayllar va `build/` ichidagi fayllarni o‘chiradi (`.gitkeep`dan tashqari).
+
+```make
+clean_outs:
+    rm -f *.o
+```
+
+* Faqat `.o` fayllarni o‘chiradi.
+
+---
+
+## ♻️ Qayta tuzish:
+
+```make
+rebuild: clean all
+```
+
+* Dastlab tozalaydi, keyin yangidan tuzadi.
+
+---
+
+## ✅ Cppcheck – statik tahlil vositasi:
+
+```make
+cppcheck:
+    cppcheck --enable=all --suppress=missingIncludeSystem $(SRC_DIR)
+```
+
+* Kutilgan xatoliklar, noto‘g‘ri foydalanishlar uchun kodni tekshiradi.
+
+```make
+cppcheck_report:
+    cppcheck ... --checkers-report=report.txt ... 2> cppcheck_output.log
+```
+
+* Natijalarni faylga yozadi: `report.txt` va `cppcheck_output.log`.
+
+```make
+read_report:
+    ... cat cppcheck_output.log ...
+```
+
+* Log fayllarni terminalga chiqaradi.
+
+```make
+clear_log:
+    find $(SRC_DIR) ... -name 'cppcheck_output.log' -delete
+```
+
+* Log fayllarni o‘chiradi.
+
+---
+
+## 🎨 Kod formatlash:
+
+```make
+clang-format:
+    clang-format -n $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+```
+
+* `*.c` va `*.h` fayllarni `clang-format` bilan tekshiradi (`-n` → faqat tekshiradi, o‘zgartirmaydi).
+
+---
+
+## 🧠 Xotira xatoliklarini tekshirish:
+
+```make
+valgrind:
+    valgrind --leak-check=full $(Q)
+```
+
+* `valgrind` yordamida dasturni ishga tushirib, xotira oqishlari (leaks) ni aniqlaydi.
+
+---
+
+## ▶️ Dastur ishga tushirish:
+
+```make
+run:
+    [ -f $(Q) ] && $(Q) || echo ...
+```
+
+* Agar dastur mavjud bo‘lsa (`../build/graph`) → ishga tushadi.
+
+---
+
+## ℹ️ Yordam (help):
+
+```make
+help:
+    @echo "Quyidagi buyruqlar mavjud: ..."
+```
+
+* Mavjud `make` buyruqlar ro‘yxatini va izohlarini chiqaradi.
+
+---
+
+## 📛 `.PHONY`:
+
+```make
+.PHONY: all clean_outs rebuild clean clang-format cppcheck cppcheck_report clear_log run valgrind help
+```
+
+* Bu qator `make` ga ushbu maqsadlar (targets) haqiqiy fayl emasligini bildiradi.
+
+---
+
+## Dasturni ishga tushirish:
+```bash
+make all
+make run
+```
+
+2. Misol ifoda kiritish:
+```
+sin(x)*x
+```
+
+3. Natija - konsolda grafik ko'rinishda chiqadi.
+
+## Xotira Boshqaruvi
+
+Dasturda dinamik xotira boshqaruvi to'g'ri amalga oshirilgan. Har bir malloc() uchun mos free() chaqiriladi.
+
+## Yaxshilanish Mumkin Bo'lgan Joylar
+
+1. Xatolarni boshqarishni yaxshilash
+2. Qo'shimcha matematik funksiyalarni qo'shish
+3. Grafik chiqishni rangli qilish
+4. Foydalanuvchi interfeysini yaxshilash
+
+Ushbu dastur matematik ifodalarni tahlil qilish, ularni RPN shakliga o'tkazish va grafik ko'rinishda chiqarishning yaxshi namunasidir. C dasturlash tilida yozilganligi sababli, u samaradorlik va past darajadagi nazoratni namoyish etadi.
 
 ## Qiziqarli Imkoniyatlar
 
@@ -109,20 +541,7 @@ void stack_free(Stack *stack);
 
 Loyihani ishga tushirish uchun:
 
-```bash
-make all
-make run
-```
 
-Keyin sizdan matematik ifoda kiritish so'raladi, masalan: `sin(x) + cos(x)`
-
-## Xulosa
-
-Ushbu loyiha orqali men:
-- Matematik ifodalarni tahlil qilish va ularni RPN ko'rinishiga o'tkazishni o'rgandim
-- Stack ma'lumotlar tuzilmasini amaliy loyihada qo'lladim
-- C tilida modulli dasturlash tamoyillarini qo'lladim
-- Grafik tasvirlash algoritmlari bilan ishlash tajribasini orttirdim
 
 Loyiha kodini to'liq ko'rish uchun mening GitHub profilimga tashrif buyurishingiz mumkin.
 
