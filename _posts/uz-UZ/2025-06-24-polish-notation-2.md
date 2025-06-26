@@ -2,12 +2,12 @@
 title: Polish notation bilan ishlash
 description: Ushbu maqolada 21-maktab basseynining "Piscine C" dasturining birinchi bosqichiga tayyorlanish uchun mo‘ljallangan, bajarilgan va izohlangan vazifalarning turli versiyalari taqdim etilgan.
 author: yorenwyl
-date: 2025-06-24 18:02:00 +0500
+date: 2025-06-25 18:02:00 +0500
 categories: [21-IT Maktab - School 21, Basseyn - C Piscine]
 tags: [Basseyn - C Piscine]
 pin: true
 image:
-  path: /sinx.png
+  path: /school-21.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: 21-IT Maktab - School 21.
 media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
@@ -23,112 +23,28 @@ media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
 [🔄 Sahifani yangilash](javascript:location.reload()){:.shadow}
 
 <details>
-      <summary>📕 O‘RGANISH UCHUN RESURSLAR </summary>
-      // Bu yerga kod to'liq izoxlar bilan yozildi
+      <summary>📕 Slaydlar PDF </summary>
+      {% include embed/pdf.html url="https://raw.githubusercontent.com/yorenwyl/yorenwyl.github.io/main/assets/books/Проект%20участника%20Science%20Fair.pdf" %}
 </details>
 
-# Reverse Polish Notation (RPN) Kalkulyatori: Matematik Ifodalarni Qayta Ishlash Loyihasi
+**Anons: Maxbus tanlovi – O'yinlar nazariyasining mashhur masalasi va uning ijtimoiy ahamiyati**
 
-Ushbu maqolada men yaratgan Reverse Polish Notation (RPN) kalkulyatori loyihasi haqida so'zlab o'taman. Loyiha C dasturlash tilida yozilgan bo'lib, matematik ifodalarni qayta ishlash va ularni grafik ko'rinishda tasvirlash imkonini beradi.
+O'yinlar nazariyasi ko'plab sohalarda, jumladan xalqaro munosabatlar, iqtisodiyot va biologiyada muhim ahamiyat kasb etadi. Eng mashhur masalalardan biri "Maxbus tanlovi"dir. Bu masala faqat matematik o'yinlarda emas, balki real hayotdagi murakkab vaziyatlarda ham namoyon bo'ladi. Ushbu maqolada biz bu dilemmani o'rganamiz va uning insoniyatning strategik qarorlar qabul qilishdagi roli haqida fikr yuritamiz.
 
-## Loyiha Tarkibi
+**Maxbus tanlovi va uning asosiy tamoyillari**
 
-Loyiha quyidagi asosiy komponentlardan iborat:
+1950-yillarda Amerika va Sovet Ittifoqi o'rtasidagi yadroviy qo'rquv va xavf-xatarlarga bog'liq vaziyatlar o'yinlar nazariyasining eng yirik namunalaridan biriga aylanishiga sabab bo'ldi. Bu "Maxbus tanlovi" deb ataladigan masala orqali tushuntiriladi. Ikki ishtirokchi o'rtasidagi qarorlar uzviy bog'liq bo'lib, har biri hamkorlik qilish yoki rad etish qarorini qabul qiladi. Agar ikkisi ham hamkorlik qilsa, har biri manfaatdor bo'ladi, ammo agar biri ikkinchisini sotib yuborsa, u yuqori mukofot oladi.
 
-1. **Matematik ifodalarni tahlil qilish (parsing)**
-2. **Infix notatsiyadan RPN ga o'tkazish**
-3. **RPN ifodasini baholash**
-4. **Natijani grafik ko'rinishda tasvirlash**
+Masalan, bir bankir sizga va boshqa ishtirokchiga hamkorlik qilish yoki sotib yuborish imkoniyatini beradi. Agar siz hamkorlik qilsangiz, ikkala tomonga ham foyda bor, ammo agar birinchi ishtirokchi sotib yuborsa, uning foydasi maksimalga chiqadi, ikkinchisi esa zararga uchraydi. Aksariyat hollarda, agar har ikki ishtirokchi o'z manfaatini ko'rib chiqsa, ular hamkorlikdan voz kechishadi va har biri faqat bitta moneta olishadi.
 
-### Asosiy Fayllar
+**Hamkorlik va "Oko uchun Oko" strategiyasi**
 
-```bash
-.
-├── evaluate_rpn.[c/h]      - RPN ifodasini baholash
-├── infix_to_rpn.[c/h]      - Infix dan RPN ga o'tkazish
-├── parse_expression.[c/h]  - Ifodalarni tahlil qilish
-├── rendering_image.[c/h]   - Grafik tasvir
-├── stack.[c/h]             - Stack amallari
-├── token.h                 - Token turlari
-└── graph.c                 - Asosiy dastur
-```
+1980-yilda Robert Akselyrod tomonidan o'tkazilgan turnirda, "Oko za Oko" (Oko uchun Oko) strategiyasi eng muvaffaqiyatli bo'lib chiqdi. Bu strategiya o'zini mukammal tarzda hamkorlikga yo'naltiradi: dastlab hamkorlik qiladi, ammo raqib prelyatsiya qilgan taqdirda, tezda javob beradi. Akselyrodning turnirida, "Oko za Oko" va uning kabi strategiyalar eng yuqori baholarni olishdi, chunki ular doimo samimiy va tezkor javoblar berishga tayyor edilar.
 
-## Qiziqarli Imkoniyatlar
+**Maxbus tanlovi va ekologiya: Hamkorlikning tabiiy o'sishi**
 
-### 1. Matematik Ifodalarni Qo'llab-quvvatlash
+Akselyrodning tadqiqotlari shuni ko'rsatdiki, "Oko za Oko" strategiyasi faqat matematik o'yinlarda emas, balki biologik tizimlarda ham muvaffaqiyatli bo'lishi mumkin. U "emergentlik" deb nomlangan hodisani keltirib chiqardi, bu esa, o'z-o'zidan hamkorlikning shakllanishi va rivojlanishini anglatadi. O'zining manfaatlarini o'ylab, turlar hamkorlik qiladi va bu tizim ichida odamlar va hayvonlar tomonidan hamkorlikning tabiiy ravishda o'sishi mumkin.
 
-Dastur quyidagi matematik operatsiyalarni qo'llab-quvvatlaydi:
-- Asosiy arifmetik amallar: `+`, `-`, `*`, `/`
-- Trigonometrik funksiyalar: `sin`, `cos`, `tan`, `ctg`
-- Boshqa funksiyalar: `sqrt`, `ln`
-- Unary minus (`-5` kabi ifodalar)
+**Xulosa**
 
-### 2. Grafik Tasvir
-
-Dastur 80x25 o'lchamdagi matritsa yordamida funksiya grafigini chizadi. Misol uchun, `sin(x)` funksiyasi uchun:
-
-```
-
-## Texnik Tafsilotlar
-
-### Token Turlari
-
-```c
-typedef enum {
-    TOKEN_NUMBER,      // sonlar
-    TOKEN_OPERATOR,    // matematik operatorlar
-    TOKEN_FUNCTION,    // matematik funksiyalar
-    TOKEN_VARIABLE,    // o'zgaruvchilar (x)
-    TOKEN_LEFT_PAREN,  // ochuvchi qavs
-    TOKEN_RIGHT_PAREN  // yopuvchi qavs
-} TokenType;
-```
-
-### Stack Amallari
-
-Loyihada RPN algoritmini amalga oshirish uchun stack (stek) ma'lumotlar tuzilmasi qo'llanilgan:
-
-```c
-typedef struct {
-    char **data;
-    int size;
-    int top;
-} Stack;
-
-void stack_init(Stack *stack, int size);
-int stack_empty(const Stack *stack);
-void stack_push(Stack *stack, const char *value);
-char *stack_pop(Stack *stack);
-char *stack_top(const Stack *stack);
-void stack_free(Stack *stack);
-```
-
-### Asosiy Algoritmlar
-
-1. **Ifodalarni tahlil qilish** - `parse_expression.c`
-2. **Infix dan RPN ga o'tkazish** - Shunting-yard algoritmi, `infix_to_rpn.c`
-3. **RPN ni baholash** - `evaluate_rpn.c`
-4. **Grafik chizish** - `rendering_image.c`
-
-## Loyihani Ishlatish
-
-Loyihani ishga tushirish uchun:
-
-```bash
-make all
-make run
-```
-
-Keyin sizdan matematik ifoda kiritish so'raladi, masalan: `sin(x) + cos(x)`
-
-## Xulosa
-
-Ushbu loyiha orqali men:
-- Matematik ifodalarni tahlil qilish va ularni RPN ko'rinishiga o'tkazishni o'rgandim
-- Stack ma'lumotlar tuzilmasini amaliy loyihada qo'lladim
-- C tilida modulli dasturlash tamoyillarini qo'lladim
-- Grafik tasvirlash algoritmlari bilan ishlash tajribasini orttirdim
-
-Loyiha kodini to'liq ko'rish uchun mening GitHub profilimga tashrif buyurishingiz mumkin.
-
----
+"Maxbus tanlovi" masalasi va Akselyrodning tajribalari nafaqat o'yinlar nazariyasining kashfiyotlari, balki insonlar va turlar o'rtasida doimiy hamkorlik, adolat va o'zaro ishonchni shakllantirishning ahamiyatini ham ko'rsatdi. Bu masala jamiyatlar, xalqaro siyosat va hatto bizning shaxsiy qarorlarimizda ham asosiy rol o'ynashi mumkin.
