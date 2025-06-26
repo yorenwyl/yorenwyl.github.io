@@ -1,7 +1,7 @@
 ---
 title: SS7 Qo‘rquv va xavf orqasidagi haqiqat
 description: axborot xavfsizligi, tarmoq texnologiyalari, uyali aloqa.
-author: cotes
+author: Yoren
 date: 2025-06-27 01:53:00 +0500
 categories: [Qamoqqa, yo'l]
 tags: [kalla kerakmas]
@@ -18,9 +18,6 @@ media_subpath: '/assets/img/articles/2025-03-26-mant-va-tipografiya'
 Ignorance is bliss – “Bilmaslik – baxtdir”
 >  Muallifi: ingliz shoiri Thomas Gray, 1742-yildagi "Ode on a Distant Prospect of Eton College" asaridan:
 >  "Where ignorance is bliss, ’tis folly to be wise."
->  (Agar bilmaslik baxt keltirsa, donolik ahmoqlik bo‘ladi.)
-
-Bu fikr odam ko‘p narsa bilgan sayin ko‘proq azob chekishini bildiradi.
 
 > `Hamma` biladigan va hech qanday qiymatga ega emas deyiladigan maqola! Aqllilar olg'a bu saytdan chiqib ketinglar! 
 {: .prompt-tip }
