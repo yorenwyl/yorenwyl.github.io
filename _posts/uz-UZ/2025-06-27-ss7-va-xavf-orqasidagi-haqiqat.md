@@ -22,7 +22,10 @@ Ignorance is bliss – “Bilmaslik – baxtdir”
 > `Hamma` biladigan va hech qanday qiymatga ega emas deyiladigan maqola! Aqllilar olg'a bu saytdan chiqib ketinglar! 
 {: .prompt-tip }
 
-SS7 (Signaling System 7 qisqartmasi) — bu "kallasi ishlaydigan" botaniklar tomonidan hamma uchun o'ylab topilgan xu***a. !21 dan tashqarida so'kish mumkin.
+SS7 (Signaling System 7 qisqartmasi) — bu "kallasi ishlaydigan" botaniklar tomonidan hamma uchun o'ylab topilgan xu***a. 
+
+!21 dan tashqarida so'kish mumkin.
+
 SS7 (Signaling System 7 qisqartmasi) — bu telekommunikatsiya kompaniyalari o‘zaro muloqot qilish uchun ishlatadigan protokoldir.
 
 Bu yirik kompaniyalar o‘rtasidagi tarmoqaro protokol sifatida, u juda katta darajadagi ishonchni o‘z ichiga oladi. Ya’ni, agar sizga SS7 orqali server bilan gaplashishga ruxsat berilgan bo‘lsa, deyarli istalgan narsani aytishga ham ruxsat berilgan bo‘ladi.
