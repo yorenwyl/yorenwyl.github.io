@@ -1,7 +1,7 @@
 ---
 title: SS7 Qo‘rquv va xavf orqasidagi haqiqat
 description: axborot xavfsizligi, tarmoq texnologiyalari, uyali aloqa.
-author: Yoren
+author: yorenwyl
 date: 2025-06-27 01:53:00 +0500
 categories: [Qamoqqa, yo'l]
 tags: [kalla kerakmas]
@@ -11,7 +11,7 @@ mermaid: true
 image:
   path: /blackhole.gif
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
-  alt: Qora tuynuk ko'p narsani yutib yubora oladi.
+  alt: Qora tuynukdan spsgettilashishdan omon chiqsangiz oltin ko'z sizniki 1-yanvardan keyin eshik yopiladi.
 media_subpath: '/assets/img/articles/2025-03-26-basseynga-tayyorlanish/'
 ---
 
@@ -127,5 +127,4 @@ SS7 zaifliklari real tahdid bo‘lishiga qaramasdan, ularning xavfini oshirib ko
 
 ---
 
-Kerak bo'lsa siz buni yaxshilikka ishlating kalla bo'lmasa mana siz uchun qamoqxonaga chipta:
-Raxmat aytish shart emas!
+Kerak bo'lsa siz buni faqat yaxshilikka ishlating va raxmat aytish shart emas!
