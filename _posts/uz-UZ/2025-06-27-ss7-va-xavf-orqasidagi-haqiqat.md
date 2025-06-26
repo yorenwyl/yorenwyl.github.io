@@ -9,10 +9,10 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: /devices-mockup.png
+  path: /blackhole.gif
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: Chirpy mavzusining bir nechta qurilmalarda moslashuvchan ko'rinishi.
-media_subpath: '/assets/img/articles/2025-03-26-mant-va-tipografiya'
+media_subpath: '/assets/img/articles/2025-03-26-basseynga-tayyorlanish'
 ---
 
 Ignorance is bliss – “Bilmaslik – baxtdir”
@@ -86,7 +86,7 @@ Umumiy bosqichlar quyidagicha:
 
 ### **Haqiqiy misollar**
 
-SS7 zaifligi birinchi marta jamoatchilikka 2008-yilda nemis mutaxassisi Tobias Engel tomonidan Chaos Computer Club konferensiyasida ochib berilgan. 2013-yilda Edvard Snouden AQSh maxsus xizmatlari bu protokoldan kuzatuv uchun foydalanganini ma’lum qildi. 2016-yilda esa Karsten Noll Amerikaning “60 Minutes” teleko‘rsatuvida kongressmen Tedd Lyu telefonini jonli efirda “vzlom” qildi.
+SS7 zaifligi birinchi marta jamoatchilikka 2008-yilda nemis mutaxassisi Tobias Engel tomonidan Chaos Computer Club konferensiyasida ochib berilgan. 2013-yilda Edvard Snouden AQSh maxsus xizmatlari bu protokoldan kuzatuv uchun foydalanganini ma’lum qildi. 2016-yilda esa Karsten Noll Amerikaning “60 Minutes” teleko‘rsatuvida kongressmen Tedd Lyu telefonini jonli efirda “buzib” ko'rsatdi.
 
 ---
 
