@@ -1,5 +1,5 @@
 ---
-title: Polish notation bilan ishlash
+title: Ilm bilan qaror qabul qilish yoki bu haqda o'ylab ko'ring )
 description: Ushbu maqolada 21-maktab basseynining "Piscine C" dasturining birinchi bosqichiga tayyorlanish uchun mo‘ljallangan, bajarilgan va izohlangan vazifalarning turli versiyalari taqdim etilgan.
 author: yorenwyl
 date: 2025-06-25 18:02:00 +0500
@@ -15,9 +15,9 @@ media_subpath: "/assets/img/articles/2025-03-26-basseynga-tayyorlanish/"
 
 ---
 
-## **Basseyn(С piscine)ga tayyorlanish uchun zarur manbalar** 
+## **Basseyn(С piscine)ga tayyorlanish uchun emas hayot uchun zarur manbalar** 
 
-> Siz dastlabki testdan o'tib zarur xujjatlarni maktabga topshirgach sizga basseynga qadar bo'lgan vaqtda tayyorlanishingiz uchun kitoblar ro'yxati junatiladi.
+> Bu yerda siz o'zingiz uchun yangi dunyo va yangi fikrlarni kashf qlasiz deb o'ylayman.
 {: .prompt-tip }
 
 [🔄 Sahifani yangilash](javascript:location.reload()){:.shadow}
