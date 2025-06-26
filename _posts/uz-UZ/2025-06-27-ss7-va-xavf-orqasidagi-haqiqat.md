@@ -11,8 +11,8 @@ mermaid: true
 image:
   path: /blackhole.gif
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
-  alt: Chirpy mavzusining bir nechta qurilmalarda moslashuvchan ko'rinishi.
-media_subpath: '/assets/img/articles/2025-03-26-basseynga-tayyorlanish'
+  alt: Qora tuynuk ko'p narsani yutib yubora oladi.
+media_subpath: '/assets/img/articles/2025-03-26-basseynga-tayyorlanish/'
 ---
 
 Ignorance is bliss – “Bilmaslik – baxtdir”
@@ -127,6 +127,5 @@ SS7 zaifliklari real tahdid bo‘lishiga qaramasdan, ularning xavfini oshirib ko
 
 ---
 
-Kerak bo'lsa sizbuni yaxshilikka ishlating kalla bo'lmasa mana siz uchun qamoqxonaga chipta:
-
+Kerak bo'lsa siz buni yaxshilikka ishlating kalla bo'lmasa mana siz uchun qamoqxonaga chipta:
 Raxmat aytish shart emas!
