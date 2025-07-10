@@ -1,0 +1,1 @@
+Ushbu papka rasmlar uchun 
