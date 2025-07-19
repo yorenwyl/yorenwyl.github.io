@@ -53,9 +53,9 @@ _Yashirish jarayoniga misol_
 ![Ochish](stg.png){: width="972" height="589" }
 _Ochish jarayoniga misol_
 
-- Telegramdan olingan matn “Cover text” maydoniga joylanadi.
+- Telegramdan olingan matn “Stegcloaked Message *” maydoniga joylanadi.
 - Parol kiritiladi (agar ishlatilgan bo‘lsa).
-- “Reveal” tugmasi orqali yashirin xabar ko‘rinadi.
+- “Get Secret” tugmasi orqali yashirin xabar ko‘rinadi.
 
 Zero-width belgilar tufayli xabar ko‘zga ko‘rinmaydi va faqat StegCloak orqali ochiladi.
 
