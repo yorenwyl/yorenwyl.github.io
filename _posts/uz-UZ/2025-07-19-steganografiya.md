@@ -50,6 +50,9 @@ _Yashirish jarayoniga misol_
 
 ### Ochish Jarayoni
 
+![Ochish](stg.png){: width="972" height="589" }
+_Ochish jarayoniga misol_
+
 - Telegramdan olingan matn “Cover text” maydoniga joylanadi.
 - Parol kiritiladi (agar ishlatilgan bo‘lsa).
 - “Reveal” tugmasi orqali yashirin xabar ko‘rinadi.
