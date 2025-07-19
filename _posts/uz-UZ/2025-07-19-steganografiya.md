@@ -67,14 +67,14 @@ Zero-width belgilar tufayli xabar ko‘zga ko‘rinmaydi va faqat StegCloak orqa
 > 
 > **I** am returning Assembly Bill 1176 without my signature.  
 > 
-> **F**or some time now I have lamented the fact that major issues are overlooked while many 
-> unnecessary bills come to me for consideration. Water reform, prison reform, and health 
-> care are major issues my Administration has brought to the table, but the Legislature just 
-> kicks the can down the alley.  
+> **F**or some time now I have lamented the fact that major issues are overlooked while many  
+> **u**nnecessary bills come to me for consideration. Water reform, prison reform, and health  
+> **c**are are major issues my Administration has brought to the table, but the Legislature just   
+> **k**icks the can down the alley.  
 > 
-> **Y**et another legislative year has come and gone without the major reforms Californians 
-> overwhelmingly deserve. In light of this, and after careful consideration, I believe it is 
-> unnecessary to sign this measure at this time.  
+> **Y**et another legislative year has come and gone without the major reforms Californians  
+> **o**verwhelmingly deserve. In light of this, and after careful consideration, I believe it is  
+> **u**nnecessary to sign this measure at this time.  
 > 
 > Sincerely,
 > 
