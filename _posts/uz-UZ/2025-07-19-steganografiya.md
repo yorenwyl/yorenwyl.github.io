@@ -40,7 +40,7 @@ StegCloak — JavaScript asosidagi vosita bo‘lib, zero-width Unicode belgilar 
 
 ### Yashirish Jarayoni
 
-![Yashirish](stg.png){: width="972" height="589" }
+![Yashirish](stg1.png){: width="972" height="589" }
 _Yashirish jarayoniga misol_
 
 - Saytga kirib, “MESSAGE” maydoniga oddiy matn yoziladi (masalan, “Salom, yaxshimisiz?”).
