@@ -40,9 +40,12 @@ StegCloak — JavaScript asosidagi vosita bo‘lib, zero-width Unicode belgilar 
 
 ### Yashirish Jarayoni
 
-- Saytga kirib, “Cover text” maydoniga oddiy matn yoziladi (masalan, “Salom, yaxshimisiz?”).
+![Yashirish](stg.png){: width="972" height="589" }
+_Yashirish jarayoniga misol_
+
+- Saytga kirib, “MESSAGE” maydoniga oddiy matn yoziladi (masalan, “Salom, yaxshimisiz?”).
 - “Secret” maydoniga maxfiy xabar kiritiladi (masalan, “Uchrashuv 22:30da”).
-- Ixtiyoriy parol qo‘yiladi.
+- Ixtiyoriy parol qo‘yiladi (masalan, “123456”).
 - “Hide” tugmasi bosiladi, natija Telegram orqali yuboriladi.
 
 ### Ochish Jarayoni
