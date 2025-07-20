@@ -3,7 +3,7 @@ title: "🕵️‍♂️ Steganografiya: maxfiy axborotni yashirish san’ati"
 description: Ushbu maqolada IT dunyosiga ta'luqli xabar va yangilikar taqdim etilgan.
 author: yorenwyl
 date: 2025-07-19 19:56:29 +0500
-categories: [Yangiliklar]
+categories: [Yangiliklar, Kiberxavfsizlik]
 tags: [Cybersecurity]
 pin: true
 image:
