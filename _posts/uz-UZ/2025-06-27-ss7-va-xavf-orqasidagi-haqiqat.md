@@ -3,8 +3,8 @@ title: SS7 Qo‘rquv va xavf orqasidagi haqiqat
 description: axborot xavfsizligi, tarmoq texnologiyalari, uyali aloqa.
 author: yorenwyl
 date: 2025-06-27 01:53:00 +0500
-categories: [Qamoqqa, yo'l]
-tags: [kalla kerakmas]
+categories: [Yangiliklar, Kiberxavfsizlik]
+tags: [Cybersecurity]
 pin: true
 math: true
 mermaid: true
