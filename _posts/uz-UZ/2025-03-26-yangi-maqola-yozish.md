@@ -3,7 +3,7 @@ title: Yangi maqola Yozish
 author: yorenwyl
 date: 2025-03-26 02:04:00 +0500
 categories: [Chirpy, O'rganish]
-tags: [Chirpyda yozish]
+tags: [Chirpy]
 render_with_liquid: false
 ---
 
