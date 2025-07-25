@@ -1,29 +1,79 @@
-collections:
-  posts:
-    output: true
-    label: Blog Posts
-    folder: _posts
-    create: true
+media:
+  input: assets/img
+  output: /assets/img
+
+content:
+  - name: posts
+    label: Blog Postlar
+    type: collection
+    path: _posts/uz-UZ
+    format: yaml-frontmatter
     fields:
       - name: title
-        label: Title
-        type: text
+        label: Sarlavha
+        type: string
+        required: true
+
       - name: date
-        label: Date
-        type: datetime
-      - name: categories
-        label: Categories
-        type: list
+        label: Sana
+        type: date
+        required: true
+
       - name: tags
-        label: Tags
-        type: list
-      - name: excerpt
-        label: Excerpt
-        type: textarea
+        label: Teglar
+        type: string
+        list: true
+
+      - name: categories
+        label: Kategoriyalar
+        type: string
+        list: true
+
       - name: image
-        label: Image
+        label: Muqova rasmi
+        type: image
+
+      - name: author
+        label: Muallif
+        type: string
+
+      - name: lang
+        label: Til
+        type: string
+        default: uz-UZ
+        required: true
+
+      - name: body
+        label: Kontent
+        type: rich-text
+
+    view:
+      fields: [title, date, author]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+
+  - name: authors
+    label: Mualliflar
+    type: file
+    path: _data/authors.yml
+    format: yaml
+    fields:
+      - name: name
+        label: To‘liq ism
+        type: string
+        required: true
+
+      - name: bio
+        label: Bio
         type: text
-      - name: content
-        label: Content
-        type: markdown
-        default: ""
+
+      - name: avatar
+        label: Avatar
+        type: image
+
+settings:
+  content:
+    merge: true
