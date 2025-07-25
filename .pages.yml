@@ -14,10 +14,18 @@ content:
         type: string
         required: true
 
+      - name: description
+        label: Post ta'rifi
+        type: text
+
       - name: date
         label: Sana
         type: date
         required: true
+
+      - name: last_modified_at
+        label: So‘nggi tahrir
+        type: date
 
       - name: tags
         label: Teglar
@@ -36,6 +44,7 @@ content:
       - name: author
         label: Muallif
         type: string
+        required: true
 
       - name: lang
         label: Til
